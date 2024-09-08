@@ -22,7 +22,7 @@ test.describe('Sanity', () => {
 
       await expect(
         page.getByText(
-          'The perfect SaaS template to build and scale your business with ease.',
+          'The perfect SaaS templates to build and scale your business with ease.',
         ),
       ).toBeVisible();
     });
