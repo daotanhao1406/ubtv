@@ -1,15 +1,13 @@
 name: Release
 
 on:
-  workflow_run:
-    workflows: ["CI"]
-    types:
-      - completed
-    branches:
-      - master
+  pull_request: 
+    branches: [master]
+    types: closed
 
 jobs:
   release:
+    if: github.event.pull_request.merged == true
     strategy:
       matrix:
         node-version: [20.x]
