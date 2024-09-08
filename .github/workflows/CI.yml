@@ -1,6 +1,11 @@
 name: CI
 
 on:
+  workflow_run:
+    workflows: ["Update dependencies"]
+    types:
+      - completed
+      
   push:
     branches: [staging]
   pull_request:
