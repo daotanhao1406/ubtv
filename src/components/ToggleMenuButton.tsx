@@ -1,6 +1,5 @@
+import { Button } from '@nextui-org/button';
 import { type ForwardedRef, forwardRef } from 'react';
-
-import { Button } from '@/components/ui/button';
 
 /* eslint-disable jsx-a11y/control-has-associated-label */
 type IToggleMenuButtonProps = {
