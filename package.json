@@ -1,6 +1,6 @@
 {
   "name": "ubtv",
-  "version": "0.0.1-pr",
+  "version": "1.0.0",
   "scripts": {
     "dev:spotlight": "spotlight-sidecar",
     "dev:next": "next dev",
@@ -163,6 +163,19 @@
       ],
       "@semantic-release/git",
       "@semantic-release/github"
+    ],
+    "prepare": [
+      "@semantic-release/changelog",
+      "@semantic-release/npm",
+      {
+        "path": "@semantic-release/git",
+        "assets": [
+          "package.json",
+          "package-lock.json",
+          "CHANGELOG.md"
+        ],
+        "message": "chore(release): ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}"
+      }
     ]
   },
   "author": "daotanhao1406 (https://github.com/daotanhao1406)"
