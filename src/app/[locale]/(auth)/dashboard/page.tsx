@@ -1,6 +1,5 @@
 import { useTranslations } from 'next-intl';
 
-import { buttonVariants } from '@/components/ui/button';
 import { MessageState } from '@/features/dashboard/MessageState';
 import { TitleBar } from '@/features/dashboard/TitleBar';
 
@@ -36,10 +35,7 @@ const DashboardIndexPage = () => {
           ),
         })}
         button={
-          <a
-            className={buttonVariants({ size: 'lg' })}
-            href="https://nextjs-boilerplate.com/pro-saas-starter-kit"
-          >
+          <a href="https://nextjs-boilerplate.com/pro-saas-starter-kit">
             {t('message_state_button')}
           </a>
         }

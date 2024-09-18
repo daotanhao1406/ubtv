@@ -2,7 +2,6 @@ import Link from 'next/link';
 import { useTranslations } from 'next-intl';
 
 import LocaleSwitcher from '@/components/LocaleSwitcher';
-import { buttonVariants } from '@/components/ui/button';
 import { CenteredMenu } from '@/features/landing/CenteredMenu';
 import { Section } from '@/features/landing/Section';
 
@@ -24,9 +23,7 @@ const Navbar = () => {
               <Link href="/sign-in">{t('sign_in')}</Link>
             </li>
             <li>
-              <Link className={buttonVariants()} href="/sign-up">
-                {t('sign_up')}
-              </Link>
+              <Link href="/sign-up">{t('sign_up')}</Link>
             </li>
           </>
         }

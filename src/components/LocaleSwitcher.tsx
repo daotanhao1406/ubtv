@@ -1,31 +1,29 @@
 'use client';
 
+import { Button } from '@nextui-org/button';
+import {
+  Dropdown,
+  DropdownItem,
+  DropdownMenu,
+  DropdownTrigger,
+} from '@nextui-org/dropdown';
 import { useLocale } from 'next-intl';
 
-import { Button } from '@/components/ui/button';
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuRadioGroup,
-  DropdownMenuRadioItem,
-  DropdownMenuTrigger,
-} from '@/components/ui/dropdown-menu';
-import { usePathname, useRouter } from '@/libs/i18nNavigation';
 import { AppConfig } from '@/utils/AppConfig';
 
 export default function LocaleSwitcher() {
-  const router = useRouter();
-  const pathname = usePathname();
+  // const router = useRouter();
+  // const pathname = usePathname();
   const locale = useLocale();
 
-  const handleChange = (value: string) => {
-    router.push(pathname, { locale: value });
-    router.refresh();
-  };
+  // const handleChange = (value: string) => {
+  //   router.push(pathname, { locale: value });
+  //   router.refresh();
+  // };
 
   return (
-    <DropdownMenu>
-      <DropdownMenuTrigger asChild>
+    <Dropdown>
+      <DropdownTrigger>
         <Button className="p-2 focus-visible:ring-offset-0" variant="ghost">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -40,16 +38,12 @@ export default function LocaleSwitcher() {
             <path d="M11.5 3a17 17 0 0 0 0 18M12.5 3a17 17 0 0 1 0 18" />
           </svg>
         </Button>
-      </DropdownMenuTrigger>
-      <DropdownMenuContent>
-        <DropdownMenuRadioGroup value={locale} onValueChange={handleChange}>
-          {AppConfig.locales.map((elt) => (
-            <DropdownMenuRadioItem key={elt.id} value={elt.id}>
-              {elt.name}
-            </DropdownMenuRadioItem>
-          ))}
-        </DropdownMenuRadioGroup>
-      </DropdownMenuContent>
-    </DropdownMenu>
+      </DropdownTrigger>
+      <DropdownMenu aria-label="Static Actions" selectedKeys={locale}>
+        {AppConfig.locales.map((elt) => (
+          <DropdownItem key={elt.id}>{elt.name}</DropdownItem>
+        ))}
+      </DropdownMenu>
+    </Dropdown>
   );
 }
