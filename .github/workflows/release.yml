@@ -1,13 +1,12 @@
 name: Release
 
 on:
-  pull_request: 
-    branches: [master]
-    types: closed
+  push: 
+    branches: 
+      - master
 
 jobs:
   release:
-    if: github.event.pull_request.merged == true
     strategy:
       matrix:
         node-version: [20.x]
