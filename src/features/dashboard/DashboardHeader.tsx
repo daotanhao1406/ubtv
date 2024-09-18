@@ -6,13 +6,6 @@ import { useLocale } from 'next-intl';
 
 import { ActiveLink } from '@/components/ActiveLink';
 import LocaleSwitcher from '@/components/LocaleSwitcher';
-import { ToggleMenuButton } from '@/components/ToggleMenuButton';
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from '@/components/ui/dropdown-menu';
 import { Logo } from '@/templates/Logo';
 import { getI18nPath } from '@/utils/Helpers';
 
@@ -32,7 +25,7 @@ const DashboardHeader = (props: {
         </Link>
 
         <svg
-          className="ml-1 size-8 stroke-muted-foreground max-sm:hidden"
+          className="ml-1 size-8 max-sm:hidden"
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24"
           fill="none"
@@ -74,7 +67,7 @@ const DashboardHeader = (props: {
         <ul className="flex items-center gap-x-1 [&_li:not(:last-child):hover]:opacity-100 [&_li:not(:last-child)]:opacity-60">
           <li>
             <div className="lg:hidden">
-              <DropdownMenu>
+              {/* <DropdownMenu>
                 <DropdownMenuTrigger asChild>
                   <ToggleMenuButton />
                 </DropdownMenuTrigger>
@@ -85,7 +78,7 @@ const DashboardHeader = (props: {
                     </DropdownMenuItem>
                   ))}
                 </DropdownMenuContent>
-              </DropdownMenu>
+              </DropdownMenu> */}
             </div>
           </li>
 
