@@ -1,3 +1,10 @@
+## [1.0.1](https://github.com/daotanhao1406/ubtv/compare/v1.0.0...v1.0.1) (2024-09-18)
+
+
+### Bug Fixes
+
+* test release ([3147f80](https://github.com/daotanhao1406/ubtv/commit/3147f80f713b0e9965848dc40efd88efe01f400f))
+
 # 1.0.0 (2024-09-18)
 
 
